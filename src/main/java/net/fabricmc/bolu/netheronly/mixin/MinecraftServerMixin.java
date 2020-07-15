@@ -13,16 +13,18 @@ import java.util.Map;
 
 @Mixin(MinecraftServer.class)
 public abstract class MinecraftServerMixin {
-	@Shadow @Final
+	@Shadow
+	@Final
 	private Map<RegistryKey<World>, ServerWorld> worlds;
 
 	/**
 	 * Change Overworld to Nether.
 	 *
 	 * @author B0lu
+	 * @reason The original method is just one line that must be invalidated.
 	 */
 	@Overwrite
 	public final ServerWorld getOverworld() {
-		return (ServerWorld)this.worlds.get(World.NETHER);
+		return this.worlds.get(World.NETHER);
 	}
 }

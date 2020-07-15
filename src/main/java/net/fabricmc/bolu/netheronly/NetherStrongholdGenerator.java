@@ -8,7 +8,7 @@ import java.util.Locale;
 import java.util.Random;
 
 
-import com.sun.istack.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 import net.minecraft.block.AbstractButtonBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

@@ -1,6 +1,7 @@
 package net.fabricmc.bolu.netheronly.mixin;
 
-import jdk.internal.org.objectweb.asm.Opcodes;
+
+import org.objectweb.asm.Opcodes;
 import net.minecraft.server.PlayerManager;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.World;

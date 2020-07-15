@@ -13,6 +13,7 @@ public abstract class NetherPortalBlockMixin {
 	 * Disable Nether portals.
 	 *
 	 * @author B0lu
+	 * @reason Nether portal creation is completely disabled.
 	 */
 	@Overwrite
 	public static boolean createPortalAt(WorldAccess worldAccess, BlockPos blockpos) {
