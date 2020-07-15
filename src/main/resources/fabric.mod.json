@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "netheronly",
+  "version": "${version}",
+
+  "name": "Nether Only Mod",
+  "description": "Minecraft, But You Can't Leave The Nether...\nInspired by #DreamNetherChallenge, Nether Only Mod makes Minecraft one Hell of a experience (haha). Changes include:\n - Players spawn and respawn in the Nether.\n - Nether portals can't be lit.\n - Nether Strongholds may be generated in any Nether biome.\n\nNOTE: some seeds may be impossible to play due to bad spawning.\n\nCan YOU beat Minecraft without leaving the Nether?",
+  "authors": [
+    "B0lu"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": "https://github.com/0xb01u/nether-only-mod"
+  },
+
+  "license": "GNU LGPL V3",
+  "icon": "assets/netheronly/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.fabricmc.bolu.netheronly.NetherOnlyMain"
+    ]
+  },
+  "mixins": [
+    "netheronly.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.fabricmc.bolu.netheronly.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "EnderEyeItemMixin",
+    "LocateCommandMixin",
+    "MinecraftServerMixin",
+    "NetherPortalBlockMixin",
+    "PlayerManagerMixin",
+    "ServerPlayerEntityMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
