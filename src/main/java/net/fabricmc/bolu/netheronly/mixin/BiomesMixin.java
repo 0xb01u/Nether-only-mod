@@ -13,11 +13,22 @@ import static net.fabricmc.bolu.netheronly.NetherStrongholdManager.NETHER_STRONG
 /*
  * UNUSED
  *
- * Left in the code as a future reference of how to inject Mixins into static initializers.
+ * Left in the code as a future reference of how to inject Mixins into static
+ * initializers.
  */
 @Mixin(Biomes.class)
 public abstract class BiomesMixin {
+	/*
+	 * INJECT INTO A STATIC INTITIALIZER
+	 */
+
+	// Suppress the warning caused by "Cannot resolve method '<clinit>' in
+	// target class.
 	@SuppressWarnings("UnresolvedMixinReference")
+	/*
+	 * clinit stands for 'CLass INITializer'.
+	 * It must be the targeted method. Treated as a regular constructor.
+	 */
 	@Inject(method = "<clinit>", at = @At("RETURN"))
 	private static void addStronghold(CallbackInfo info) {
 		addStrongholdToBiome(Biomes.NETHER_WASTES);
