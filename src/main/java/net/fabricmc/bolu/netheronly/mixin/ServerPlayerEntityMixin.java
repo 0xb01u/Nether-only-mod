@@ -15,8 +15,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ServerPlayerEntity.class)
 public abstract class ServerPlayerEntityMixin {
 	/*
-	 * INJECTING INTO A CONSTRUCTOR:
+	 * INJECTING INTO A CONSTRUCTOR.
 	 */
+
 	@Shadow
 	private RegistryKey<World> spawnPointDimension;
 

@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Nether Only Mod",
-  "description": "Minecraft, But You Can't Leave The Nether...\nInspired by #DreamNetherChallenge, Nether Only Mod makes Minecraft one Hell of a experience (haha). Changes include:\n - Players spawn and respawn in the Nether.\n - Nether portals can't be lit.\n - Nether Strongholds may be generated in any Nether biome.\n\nNOTE: some seeds may be impossible to play due to bad spawning.\n\nCan YOU beat Minecraft without leaving the Nether?",
+  "description": "Minecraft, But You Can't Leave The Nether...\nInspired by #DreamNetherChallenge, Nether Only Mod makes Minecraft one Hell of a experience (haha). Changes include:\n - Players spawn and respawn in the Nether.\n - Nether portals can't be lit.\n - Nether Strongholds may be generated in any Nether biome.\n - Ender Eyes track Nether Strongholds in the Nether.\n\nNOTE: some seeds may be impossible to play due to bad spawning.\n\nCan YOU beat Minecraft without leaving the Nether?",
   "authors": [
     "B0lu"
   ],

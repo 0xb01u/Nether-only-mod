@@ -19,11 +19,11 @@ import static net.fabricmc.bolu.netheronly.NetherStrongholdManager.NETHER_STRONG
 @Mixin(Biomes.class)
 public abstract class BiomesMixin {
 	/*
-	 * INJECT INTO A STATIC INTITIALIZER
+	 * INJECTING INTO A STATIC INTITIALIZER.
 	 */
 
 	// Suppress the warning caused by "Cannot resolve method '<clinit>' in
-	// target class.
+	// target class".
 	@SuppressWarnings("UnresolvedMixinReference")
 	/*
 	 * clinit stands for 'CLass INITializer'.

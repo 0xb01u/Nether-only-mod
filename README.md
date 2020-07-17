@@ -5,6 +5,7 @@ Inspired by #DreamNetherChallenge, Nether Only Mod makes Minecraft one Hell of a
  - Players spawn and respawn in the Nether.
  - Nether portals can't be lit.
  - Nether Strongholds may be generated in any Nether biome.
+ - Ender Eyes track Nether Strongholds in the Nether.
 
 Can YOU beat Minecraft without leaving the Nether?
 
