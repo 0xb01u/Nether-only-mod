@@ -2,7 +2,9 @@ package net.fabricmc.bolu.netheronly;
 
 import com.mojang.serialization.Codec;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import net.minecraft.structure.StructureManager;
 import net.minecraft.structure.StructurePiece;
@@ -25,6 +27,13 @@ import net.minecraft.world.gen.feature.StructureFeature;
  */
 public class NetherStrongholdFeature extends
 		StructureFeature<DefaultFeatureConfig> {
+	private static long worldSeed;
+	private static final List<ChunkPos> structPos;
+
+	static {
+		structPos = new ArrayList<>(128);
+	}
+
 	public NetherStrongholdFeature(Codec<DefaultFeatureConfig> codec) {
 		super(codec);
 	}
@@ -37,12 +46,47 @@ public class NetherStrongholdFeature extends
 
 	@Override
 	protected boolean shouldStartAt(ChunkGenerator chunkGenerator,
-	                                BiomeSource biomeSource, long l,
+	                                BiomeSource biomeSource, long seed,
 	                                ChunkRandom chunkRandom, int i, int j,
 	                                Biome biome, ChunkPos chunkPos,
 	                                DefaultFeatureConfig defaultFeatureConfig) {
-		return (Math.abs(chunkPos.x) >= 50 || Math.abs(chunkPos.z) >= 50)
-				&& chunkRandom.nextInt(100) < 1;
+		worldSeed = seed;
+		getNetherStrongholdPosList();
+		return structPos.contains(new ChunkPos(i, j));
+	}
+
+	/* Generate NetherStronghold positions */
+	public static List<ChunkPos> getNetherStrongholdPosList() {
+		if (structPos.isEmpty()) {
+			// Default values.
+			int distance = 32;
+			int count = 128;
+			int spread = 3;
+			Random random = new Random(worldSeed);
+			double angle = random.nextDouble() * 3.141592653589793D * 2.0D;
+			int l = 0;
+			int m = 0;
+
+			for (int n = 0; n < count; ++n) {
+				double e = (double) (4 * distance + distance * m * 6) +
+						(random.nextDouble() - 0.5D) * (double) distance * 2.5D;
+				int o = (int) Math.round(Math.cos(angle) * e);
+				int p = (int) Math.round(Math.sin(angle) * e);
+
+				structPos.add(new ChunkPos(o >> 4, p >> 4));
+				angle += 6.283185307179586D / (double) spread;
+				++l;
+				if (l == spread) {
+					++m;
+					l = 0;
+					spread += 2 * spread / (m + 1);
+					spread = Math.min(spread, count - n);
+					angle += random.nextDouble() * 3.141592653589793D * 2.0D;
+				}
+			}
+		}
+
+		return new ArrayList<>(structPos);
 	}
 
 	@Override

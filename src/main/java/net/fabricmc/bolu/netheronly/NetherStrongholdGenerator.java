@@ -43,7 +43,7 @@ import net.minecraft.world.gen.chunk.ChunkGenerator;
 /*
  * This code is almost identical to the original StrongholdGenerator code.
  *
- * Actual blocks have been changed to make the give it the Nether feel (based on
+ * Actual blocks have been changed to the give it the Nether feel (based on
  * the Nether Stronghold from Dream and George's plugin), but the logic has been
  * kept intact.
  */

@@ -4,6 +4,7 @@
   "package": "net.fabricmc.bolu.netheronly.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "ChunkGeneratorMixin",
     "EnderEyeItemMixin",
     "LocateCommandMixin",
     "MinecraftServerMixin",
