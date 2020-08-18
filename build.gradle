@@ -10,6 +10,13 @@ archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
 
+repositories {
+    maven {
+        name = 'Earthcomputer Mods'
+        url = 'https://dl.bintray.com/earthcomputer/mods'
+    }
+}
+
 dependencies {
 	//to change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -27,6 +34,10 @@ dependencies {
 
 	// Nullable annotation
 	compile 'org.jetbrains:annotations:13.0'
+
+	// Earthcomputer's LibStructure
+	modImplementation 'net.earthcomputer:libstructure:1.5' // Use the version for the latest version table below
+    include 'net.earthcomputer:libstructure:1.5'
 }
 
 processResources {

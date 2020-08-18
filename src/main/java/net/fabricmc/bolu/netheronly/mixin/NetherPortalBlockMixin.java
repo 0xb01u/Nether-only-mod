@@ -1,6 +1,6 @@
 package net.fabricmc.bolu.netheronly.mixin;
 
-import net.minecraft.block.NetherPortalBlock;
+import net.minecraft.AreaHelper;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldAccess;
 import org.spongepowered.asm.mixin.Mixin;
@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.Overwrite;
 /*
  * Disables Nether Portal lighting.
  */
-@Mixin(NetherPortalBlock.class)
+@Mixin(AreaHelper.class)
 public abstract class NetherPortalBlockMixin {
 
 	/**
@@ -23,7 +23,5 @@ public abstract class NetherPortalBlockMixin {
 	 * regardless of what the player is trying to do.
 	 */
 	@Overwrite
-	public static boolean createPortalAt(WorldAccess worldAccess, BlockPos blockpos) {
-		return false;
-	}
+	public void createPortal(WorldAccess worldAccess, BlockPos blockpos) {}
 }

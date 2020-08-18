@@ -11,6 +11,7 @@ import net.minecraft.structure.StructurePiece;
 import net.minecraft.structure.StructureStart;
 import net.minecraft.util.math.BlockBox;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.registry.DynamicRegistryManager;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.source.BiomeSource;
 import net.minecraft.world.gen.ChunkRandom;
@@ -73,7 +74,7 @@ public class NetherStrongholdFeature extends
 				int o = (int) Math.round(Math.cos(angle) * e);
 				int p = (int) Math.round(Math.sin(angle) * e);
 
-				structPos.add(new ChunkPos(o >> 4, p >> 4));
+				structPos.add(new ChunkPos(o, p));
 				angle += 6.283185307179586D / (double) spread;
 				++l;
 				if (l == spread) {
@@ -95,7 +96,7 @@ public class NetherStrongholdFeature extends
 	}
 
 	@Override
-	public GenerationStep.Feature method_28663() {
+	public GenerationStep.Feature getGenerationStep() {
 		return GenerationStep.Feature.UNDERGROUND_DECORATION;
 	}
 
@@ -109,7 +110,8 @@ public class NetherStrongholdFeature extends
 		}
 
 		@Override
-		public void init(ChunkGenerator chunkGenerator,
+		public void init(DynamicRegistryManager dynamicRegistryManager,
+		                 ChunkGenerator chunkGenerator,
 		                 StructureManager structureManager, int i, int j,
 		                 Biome biome, DefaultFeatureConfig defaultFeatureConfig) {
 			int var7 = 0;
